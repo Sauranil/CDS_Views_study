@@ -1,0 +1,17 @@
+@AbapCatalog.sqlViewName: 'ZX_CDS_SQ1 '
+@AbapCatalog.compiler.compareFilter: true
+@AbapCatalog.preserveKey: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'First CDS View'
+define view ZX_CDS_TEST01 as select from vbak {
+    
+    //This is a single line comment 
+    /* This is a 
+    multiline comment */
+    
+    key vbeln as SalesDoc, 
+    -- Single line comment 
+    ernam as CreatedBy, 
+    erdat as CreatedOn
+    
+}
