@@ -1,0 +1,23 @@
+@AbapCatalog.sqlViewName: 'ZX_SQL_CASE'
+@AbapCatalog.compiler.compareFilter: true
+@AbapCatalog.preserveKey: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'Demo on Case and Nested Case'
+define view ZX_CDS_CASE as select from snwd_so {
+    key so_id,
+    created_at,
+    created_by,
+    case billing_status
+    when 'P' then 'Paid'
+    when ' ' then
+    
+    case delivery_status 
+    when 'D' then 'OK'
+    else 'NA'
+    end
+    
+    else 'No Status'
+    end as BillinStats
+    
+    
+}
