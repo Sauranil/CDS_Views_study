@@ -1,0 +1,16 @@
+@AbapCatalog.sqlViewName: 'ZX_CDS_SESV'
+@AbapCatalog.compiler.compareFilter: true
+@AbapCatalog.preserveKey: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'CDS Views for Session Variables'
+@ClientHandling.type: #CLIENT_DEPENDENT
+@ClientHandling.algorithm: #SESSION_VARIABLE
+define view ZX_CDS_SESSVAR as select from vbak {
+    
+    key vbeln,
+    $session.client as CurClient,
+    $session.system_date as SystemDate,
+    $session.system_language as SysLang,
+    $session.user as SysUser
+    
+}
